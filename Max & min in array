@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    float a[100], sum = 0, diff = 0;
+    float min, max; 
+// Added variables to store minimum and maximum
+    int i, n;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    printf("Enter numbers:\n");
+    for (i = 0; i < n; i++) {
+        printf("a[%d] = ", i);
+        scanf("%f", &a[i]);
+
+        if (i == 0) {
+            min = max = a[i];
+ // Initialize min and max with the first element
+        } else {
+            if (a[i] < min) {
+                min = a[i];
+            }
+            if (a[i] > max) {
+                max = a[i];
+            }
+        }
+    }
+
+    for (i = 0; i < n; i++) {
+        sum = sum + a[i];
+        diff = diff - a[i];
+    }
+
+    printf("Sum is %f\n", sum);
+    printf("Difference is %f\n", diff);
+    printf("Minimum is %f\n", min);
+    printf("Maximum is %f\n", max);
+
+    return 0;
+}
